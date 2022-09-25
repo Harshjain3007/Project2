@@ -15,4 +15,10 @@ router.post("/functionup/interns", InternController.createIntern)
 //---------------------Route For Displaying College Intern
 router.get("/functionup/collegeDetails", CollegeController.getCollegeIntern)
 
+router.all("/*", function (req, res) {
+    res
+      .status(404)
+      .send({ status: false, msg: "The api you requested is not available" });
+  });
+
 module.exports = router;
